@@ -25,18 +25,24 @@ public abstract class DishCollection {
         }
     }
 
+    public boolean addDish(String name, double price) {
+        Dish dish = new Dish(name, price);
+        return addDish(dish);
+    }
+
 
     // REQUIRES: dishList.size >= 1
     // MODIFIES: this
-    // EFFECTS: add a dish to the dishList. if already exist
-    //          return false, otherwise true.
-    public boolean removeDish(Dish dish) {
-        if (dishList.contains(dish)) {
-            dishList.remove(dish);
-            return true;
-        } else {
-            return false;
+    // EFFECTS: remove a dish from the dishList by its name. if already exist
+    //          return true, otherwise false.
+    public boolean removeDish(String dishName) {
+        for (Dish d : dishList) {
+            if (d.getName().equals(dishName)) {
+                dishList.remove(d);
+                return true;
+            }
         }
+        return false;
     }
 
 

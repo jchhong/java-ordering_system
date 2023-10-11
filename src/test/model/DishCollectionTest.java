@@ -31,6 +31,15 @@ public class DishCollectionTest {
     void addOneDish() {
         assertTrue(testMenu.addDish(d1));
         assertEquals(1, testMenu.getDishList().size());
+        assertEquals(d1, testMenu.getDishList().get(0));
+    }
+
+    @Test
+    void addOneDishByNameAndPrice() {
+        assertTrue(testMenu.addDish("egg", 1.5));
+        assertEquals(1, testMenu.getDishList().size());
+        assertEquals("egg", testMenu.getDishList().get(0).getName());
+        assertEquals(1.5, testMenu.getDishList().get(0).getPrice());
     }
 
     @Test
@@ -55,7 +64,7 @@ public class DishCollectionTest {
         assertTrue(testMenu.addDish(d1));
         assertTrue(testMenu.addDish(d2));
         assertEquals(2, testMenu.getDishList().size());
-        assertTrue(testMenu.removeDish(d1));
+        assertTrue(testMenu.removeDish("egg"));
         assertEquals(d2, testMenu.getDishList().get(0));
     }
 
@@ -64,7 +73,7 @@ public class DishCollectionTest {
         assertTrue(testMenu.addDish(d1));
         assertTrue(testMenu.addDish(d2));
         assertEquals(2, testMenu.getDishList().size());
-        assertFalse(testMenu.removeDish(d3));
+        assertFalse(testMenu.removeDish("beef"));
         assertEquals(d1, testMenu.getDishList().get(0));
         assertEquals(d2, testMenu.getDishList().get(1));
     }

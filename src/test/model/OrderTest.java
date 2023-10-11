@@ -28,6 +28,24 @@ public class OrderTest {
     }
 
     @Test
+    void testAddDishInMenu() {
+        Menu testMenu = new Menu();
+        testMenu.addDish(d1);
+        testMenu.addDish(d2);
+        assertTrue(testOrder.addDish(testMenu, "Chicken Sandwich"));
+        assertEquals(1, testOrder.getDishList().size());
+    }
+
+    @Test
+    void testAddDishNotInMenu() {
+        Menu testMenu = new Menu();
+        testMenu.addDish(d2);
+        testMenu.addDish(d3);
+        assertFalse(testOrder.addDish(testMenu, "Chicken Sandwich"));
+        assertEquals(0, testOrder.getDishList().size());
+    }
+
+    @Test
     void testEligibleForDiscount() {
         Dish d4 = new Dish("beef sandwich", 93.25);
         testOrder.addDish(d1);

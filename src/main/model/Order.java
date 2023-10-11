@@ -51,6 +51,21 @@ public class Order extends DishCollection {
         isComplete = true;
     }
 
+
+    // MODIFIES: this
+    // EFFECTS: add a dish to the dish list and return ture if the dish is included in the
+    //          given menu, otherwise return false.
+    public boolean addDish(Menu menu, String dishName) {
+        for (Dish d : menu.getDishList()) {
+            if (d.getName().equals(dishName)) {
+                this.dishList.add(d);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     // EFFECTS: If the totalPrice is greater than or equal to the DISCOUNT_VALUE,
     //          a discount of DISCOUNT_AMOUNT will be subtracted. And the discount will
     //          apply ONLY ONCE.

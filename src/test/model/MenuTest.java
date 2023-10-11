@@ -55,7 +55,7 @@ public class MenuTest {
         assertTrue(testMenu.addDish(d1));
         assertTrue(testMenu.addDish(d2));
         assertEquals(2, testMenu.getDishList().size());
-        assertTrue(testMenu.removeDish(d1));
+        assertTrue(testMenu.removeDish("egg"));
         assertEquals(d2, testMenu.getDishList().get(0));
     }
 
@@ -64,7 +64,7 @@ public class MenuTest {
         assertTrue(testMenu.addDish(d1));
         assertTrue(testMenu.addDish(d2));
         assertEquals(2, testMenu.getDishList().size());
-        assertFalse(testMenu.removeDish(d3));
+        assertFalse(testMenu.removeDish("beef"));
         assertEquals(d1, testMenu.getDishList().get(0));
         assertEquals(d2, testMenu.getDishList().get(1));
     }
