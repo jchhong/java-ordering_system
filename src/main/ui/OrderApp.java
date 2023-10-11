@@ -51,7 +51,7 @@ public class OrderApp {
     // EFFECTS: display the main actions
     void displayActions() {
         System.out.println("\nPlease choose your action: ");
-        System.out.println("\t1 -> Edit Menu");
+        System.out.println("\t1 -> View and Edit Menu");
         System.out.println("\t2 -> Make An Order");
         System.out.println("\t3 -> Quit");
     }

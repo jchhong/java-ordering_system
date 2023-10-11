@@ -5,8 +5,7 @@
 This desktop application is for restaurant waiters /
 waitresses to manage meal orders. Users can edit and view
 the menu, add dishes to cart, place an order, edit an order,
-and check out. This applicatio
-n is faced to restaurant 
+and check out. This application is faced to restaurant 
 waiters / waitresses.
 
 I am interested in this project because an automatic
