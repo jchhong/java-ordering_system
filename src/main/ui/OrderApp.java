@@ -125,7 +125,7 @@ public class OrderApp {
     //          add dish, remove dish, view cart, change note, place order and back
     //          to the previous menu.
     void makeAnOrder() {
-        System.out.println("Please enter the table number");
+        System.out.println("Please enter the table number (please enter an integer)");
         int tableNumber = new Integer(input.next());
         newOrder = new Order(tableNumber);
         String command;
