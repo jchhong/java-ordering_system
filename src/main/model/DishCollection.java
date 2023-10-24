@@ -14,7 +14,7 @@ public abstract class DishCollection {
     }
 
     // MODIFIES: this
-    // EFFECTS: add a dish to the dishList. if already exist
+    // EFFECTS: add the given dish to the dishList. if already exist
     //          return false, otherwise true.
     public boolean addDish(Dish dish) {
         if (! dishList.contains(dish)) {
@@ -25,6 +25,9 @@ public abstract class DishCollection {
         }
     }
 
+    // MODIFIES: this
+    // EFFECTS: add a dish by the given name and price to the dishList.
+    //          if already exist, return false, otherwise true.
     public boolean addDish(String name, double price) {
         Dish dish = new Dish(name, price);
         return addDish(dish);

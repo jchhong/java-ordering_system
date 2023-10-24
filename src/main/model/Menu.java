@@ -22,13 +22,14 @@ public class Menu extends DishCollection {
         return menuOutline;
     }
 
+    // EFFECTS: return JSON that is converted from a menu
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("dishes", dishesToJson());
         return json;
     }
 
-    // EFFECTS: returns things in this workroom as a JSON array
+    // EFFECTS: returns dishes in this menu as a JSON array
     private JSONArray dishesToJson() {
         JSONArray jsonArray = new JSONArray();
 

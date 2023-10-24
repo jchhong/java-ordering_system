@@ -1,0 +1,26 @@
+{"dishes": [
+    {
+        "price": 4.69,
+        "name": "Double Cheeseburger"
+    },
+    {
+        "price": 6.49,
+        "name": "Chicken Sandwich"
+    },
+    {
+        "price": 8.25,
+        "name": "Beef Sandwich"
+    },
+    {
+        "price": 9.85,
+        "name": "Salmon Salad"
+    },
+    {
+        "price": 10.05,
+        "name": "sushi"
+    },
+    {
+        "price": 12.89,
+        "name": "Shrimp"
+    }
+]}

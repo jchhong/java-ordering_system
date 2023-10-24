@@ -47,8 +47,8 @@ public class JsonReader {
         return myMenu;
     }
 
-    // MODIFIES: wr
-    // EFFECTS: parses thingies from JSON object and adds them to workroom
+    // MODIFIES: menu
+    // EFFECTS: parses dishes from JSON object and adds them to the given menu
     private void addDishesToMenu(Menu menu, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("dishes");
         for (Object json : jsonArray) {
@@ -57,8 +57,8 @@ public class JsonReader {
         }
     }
 
-    // MODIFIES: wr
-    // EFFECTS: parses thingy from JSON object and adds it to workroom
+    // MODIFIES: menu
+    // EFFECTS: parses one dish from JSON object and adds it to the given menu
     private void addOneDishToMenu(Menu menu, JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         double price = jsonObject.getDouble("price");

@@ -3,7 +3,7 @@ package model;
 
 import org.json.JSONObject;
 
-// represent a dish having a name, and price
+// represent a dish having a name, and a price
 public class Dish {
     private String name;
     private double price;
@@ -30,6 +30,7 @@ public class Dish {
         return price;
     }
 
+    // EFFECTS: return a JSON object that is converted from a dish
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", name);

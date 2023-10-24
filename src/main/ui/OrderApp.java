@@ -1,16 +1,24 @@
 package ui;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
 import model.Dish;
 import model.Menu;
 import model.Order;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+// Represents the dish ordering application
 public class OrderApp {
+    private static final String JSON_STORE = "./data/myMenu.json";
     private Scanner input;
     private Menu myMenu;
     private Order newOrder;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     // EFFECTS: runs the ordering app
     public OrderApp() {
@@ -27,7 +35,12 @@ public class OrderApp {
         while (keepRunning) {
             displayActions();
             command = input.next();
-            if (command.equals("3")) {
+            if (command.equals("5")) {
+                System.out.println("Do you want to save the Menu? Press \"y\" for \"yes\" and \"n\" for \"no\"");
+                String newCommand = input.next();
+                if (newCommand.equals("y")) {
+                    saveMenu();
+                }
                 System.out.println("Bye~");
                 keepRunning = false;
             } else {
@@ -46,14 +59,18 @@ public class OrderApp {
         myMenu.addDish("Chicken Sandwich", 6.49);
         myMenu.addDish("Beef Sandwich", 8.25);
         myMenu.addDish("Salmon Salad", 9.85);
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
     }
 
     // EFFECTS: display the main actions
     void displayActions() {
         System.out.println("\nPlease choose your action: ");
         System.out.println("\t1 -> View and Edit Menu");
-        System.out.println("\t2 -> Make An Order");
-        System.out.println("\t3 -> Quit");
+        System.out.println("\t2 -> Make A New Order");
+        System.out.println("\t3 -> Save My Menu");
+        System.out.println("\t4 -> Reload My Menu");
+        System.out.println("\t5 -> Quit");
     }
 
     // EFFECTS: process the commands for main actions
@@ -62,6 +79,10 @@ public class OrderApp {
             editMenu();
         } else if (command.equals("2")) {
             makeAnOrder();
+        } else if (command.equals("3")) {
+            saveMenu();
+        } else if (command.equals("4")) {
+            loadMenu();
         } else {
             System.out.println("Please choose a valid option.");
         }
@@ -214,4 +235,28 @@ public class OrderApp {
     void placeOrder() {
         System.out.println(newOrder.view());
     }
+
+    // EFFECTS: saves the menu to file
+    private void saveMenu() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(myMenu);
+            jsonWriter.close();
+            System.out.println("Saved my Menu to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads menu from file
+    private void loadMenu() {
+        try {
+            myMenu = jsonReader.read();
+            System.out.println("Loaded my Menu from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
+    }
+
 }
