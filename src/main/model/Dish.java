@@ -1,6 +1,8 @@
 package model;
 
 
+import org.json.JSONObject;
+
 // represent a dish having a name, and price
 public class Dish {
     private String name;
@@ -26,6 +28,13 @@ public class Dish {
 
     public double getPrice() {
         return price;
+    }
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("price", price);
+        return json;
     }
 
 }

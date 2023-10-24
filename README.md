@@ -22,3 +22,10 @@ to the order.
 * As a user, I want to be able to calculate the subtotal,
 subtotal after discount, and total price.
 * As a user, I want to be able to view the order.
+* As a user, I want to be able to save my menu (if I so choose)
+* As a user, I want to be able to be able to load my menu from 
+file (if I so choose)
+
+## 3. Reference
+* Class `JsonReader`,`JsonReaderTest`, `JsonWriter`,`JsonWriterTest`
+partly cited from: ubc CPSC210 2023W1 JsonSerializationDemo
