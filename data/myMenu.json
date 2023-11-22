@@ -16,11 +16,19 @@
         "name": "Salmon Salad"
     },
     {
-        "price": 10.05,
-        "name": "sushi"
+        "price": 11,
+        "name": "Sushi"
     },
     {
-        "price": 12.89,
-        "name": "Shrimp"
+        "price": 100,
+        "name": "Hamburger"
+    },
+    {
+        "price": 1.05,
+        "name": "Apple"
+    },
+    {
+        "price": 2.45,
+        "name": "Stawberry"
     }
 ]}

@@ -29,3 +29,12 @@ file (if I so choose)
 ## 3. Reference
 * Class `JsonReader`,`JsonReaderTest`, `JsonWriter`,`JsonWriterTest`
 partly cited from: ubc CPSC210 2023W1 JsonSerializationDemo
+
+## 4. Instructions for Grader
+* You can add a dish to my menu by first entering the new dish name and the new dish 
+price in the text fields, then clicking the "Add Dish to Menu" button.
+* You can remove a dish by first selecting the row of the dish, then clicking 
+the "Remove Dish from Menu" button.
+* The background image is provided, which is a cartoon cooking image.
+* You can save the menu by clicking the "Save My Menu" button.
+* You can reload the menu by clicking the "Reload My Menu" button.
