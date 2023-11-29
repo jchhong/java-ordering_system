@@ -15,10 +15,13 @@ public abstract class DishCollection {
 
     // MODIFIES: this
     // EFFECTS: add the given dish to the dishList. if already exist
-    //          return false, otherwise true.
+    //          return false, otherwise true. If successfully added,
+    //          log this event.
     public boolean addDish(Dish dish) {
         if (! dishList.contains(dish)) {
             dishList.add(dish);
+            EventLog.getInstance().logEvent(new Event("Added a new dish: "
+                    + dish.getName() + " $" + dish.getPrice()));
             return true;
         } else {
             return false;
@@ -28,6 +31,7 @@ public abstract class DishCollection {
     // MODIFIES: this
     // EFFECTS: add a dish by the given name and price to the dishList.
     //          if already exist, return false, otherwise true.
+    //          If successfully added, log this event.
     public boolean addDish(String name, double price) {
         Dish dish = new Dish(name, price);
         return addDish(dish);
@@ -37,11 +41,14 @@ public abstract class DishCollection {
     // REQUIRES: dishList.size >= 1
     // MODIFIES: this
     // EFFECTS: remove a dish from the dishList by its name. if already exist
-    //          return true, otherwise false.
+    //          return true, otherwise false. If successfully removed,
+    //          log this event.
     public boolean removeDish(String dishName) {
         for (Dish d : dishList) {
             if (d.getName().equals(dishName)) {
                 dishList.remove(d);
+                EventLog.getInstance().logEvent(new Event("Removed dish: "
+                        + dishName + " $" + d.getPrice()));
                 return true;
             }
         }

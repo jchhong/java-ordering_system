@@ -1,6 +1,8 @@
 package ui;
 
 import model.Dish;
+import model.Event;
+import model.EventLog;
 import model.Menu;
 import persistence.JsonReader;
 import persistence.JsonWriter;
@@ -9,6 +11,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -143,6 +147,21 @@ public class OrderingAppGUI extends JFrame {
 
         setSize(WIDTH, HEIGHT);
         setVisible(true);
+
+        // add WindowAdapter to printLog() when window closed
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                printLog();
+            }
+        });
+    }
+
+    // EFFECTS: print log from the EventLog
+    private void printLog() {
+        for (Event next : EventLog.getInstance()) {
+            System.out.println(next.toString() + "\n");
+        }
     }
 
 
