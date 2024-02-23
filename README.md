@@ -30,7 +30,7 @@ file (if I so choose)
 * Class `JsonReader`,`JsonReaderTest`, `JsonWriter`,`JsonWriterTest`
 partly cited from: ubc CPSC210 2023W1 JsonSerializationDemo
 
-## 4. Instructions for Grader
+## 4. Instructions
 * You can add a dish to my menu by first entering the new dish name and the new dish 
 price in the text fields, then clicking the "Add Dish to Menu" button.
 * You can remove a dish by first selecting the row of the dish, then clicking 
@@ -39,12 +39,11 @@ the "Remove Dish from Menu" button.
 * You can save the menu by clicking the "Save My Menu" button.
 * You can reload the menu by clicking the "Reload My Menu" button.
 
-## 5. Phase 4: Task 2
-Examples of events:
+## 5. Examples of Log Events:
 - Added a new dish: Strawberry $2.45
 - Removed dish: Salmon Salad $9.85
 
-## 6.Phase 4: Task 3 Reflection
+## 6. Reflection
 If I had more time, I would add an association from OrderingAppGUI to
 Order. I did not realize the part for Ordering function for my GUI since I don't have
 that much time. Another change I'm thinking of is considering an observering
